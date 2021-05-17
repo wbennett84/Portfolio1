@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+:root {
+    --background: rgba(0, 0, 0, 0.85);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    background-image: url("images/bg1.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: .5em;
+    position: relative;
+
+}
+
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: .5em;
+    color: white;
+    position: relative;
+
+}
+
+
+
+.container3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0;
+    position: absolute;
+    margin-top: -30px;
+    margin-right: 10%;
+    
+
+}
+
+
+.head1 img{
+
+
+    max-width: 40%;
+    margin-bottom: -2.2%;
+    
+}
+
+.head2 img{
+
+    max-width: 40%;
+    margin-bottom: -2.1%;
+
+}
+
+.head3 img{
+
+    max-width: 40%;
+    margin-bottom: -2.2%;
+
+}
+
+.head4 img{
+    max-width: 40%;
+    margin-bottom: -2.1%;
+}
+
+.head5 img{
+    max-width: 40%;
+    margin-bottom: -2.1%;
+}
+
+.head6 img{
+    max-width: 40%;
+    margin-bottom: -2.1%;
+}
+
+.head7 img{
+    max-width: 40%;
+    margin-bottom: -2.8%;
+}
+
+
+.head8 img{
+    max-width: 40%;
+    margin-bottom: -3.1%;
+}
+
+.head9 img{
+    max-width: 40%;
+    margin-bottom: -2.7%;
+}
+
+.head10 img{
+    max-width: 40%;
+    margin-bottom: -3.5%;
+}
+
+.head11 img{
+    max-width: 40%;
+    margin-bottom: -3.1%;
+}
+
+.head12 img{
+    max-width: 40%;
+    margin-bottom: -2.1%;
+}
+
+.head13 img{
+    max-width: 40%;
+    margin-bottom: -.6%;
+}
+
+
+.item1 {
+    margin-top: 2.5%;
+    margin-right: 12.5%;
+}
+
+
+.item2 {
+    margin-top: -5%;
+    margin-right: 70%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 5;
+}
+
+
+/* HOVER EFFECTS ON FACE */
+
+.head1 img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition:ease-in-out;
+    transition-duration: .2s;
+}
+
+.head2 img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition:ease-in-out;
+    transition-duration: .2s;
+}
+
+
+
+
+/* navigation styles start here */
+
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: rgb(255, 0, 0);
+}
+
+.nav-toggle:checked ~ nav { 
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+/* THIS IS STYLING FOR BIGGER SCREENS */
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr; 
+}
+
+.logo {
+    grid-column: 2 / span 1;
+}
+
+nav {
+    all: unset;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul {
+    /* display: flex makes the nav buttons be in a row */
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+}
+
+nav a {
+    opacity: 1;
+    position: relative;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0,1);
+    transform-origin: left;
+    transition: transform ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    transform: scale(1,1);
+}
+
+
+
+
+}
+
+
+/* THE FOLLOWING IS ALL MY ADDITIONAL CODE */
+
+
+.even-columns {
+    display: flex;
+}
+
+.even-columns > * {
+    flex-basis: 100%;
+}
+
+
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.grid-ish > * {
+    flex: 1 1 10em;
+}
+
+.content-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.content-sidebar > *:nth-child(1) {
+    flex: 1 1 70%;
+    min-width: 25ch;
+}
+
+.content-sidebar > *:nth-child(2) {
+    flex: 1 1 30%;
+}
+
+#box1 img{
+    background-color: transparent;
+    background-blend-mode:unset;
+}
+
+#box1 {
+    background-color: transparent;
+    background-blend-mode:overlay;
+}
+
+
+
+
+
+.box1 img{
+    all: unset;
+    background-color: transparent;
+    background-blend-mode:screen;
+    z-index: 1;
+
+}
+
+.box1 {
+    all: unset;
+    background-color: transparent;
+    background-blend-mode:overlay;
+}
+
+
